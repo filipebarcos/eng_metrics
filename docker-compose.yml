@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: eng_metrics_db
+    image: postgres:12-alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: eng_metrics
+      POSTGRES_USER: eng_metrics
+      POSTGRES_PASSWORD: eng_metrics
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  metabase:
+    container_name: eng_metrics_metabase
+    image: metabase/metabase
+    restart: always
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    environment:
+      MB_DB_FILE: /metabase-data/metabase.db
+    volumes:
+      - metabase:/metabase-data
+
+volumes:
+  postgres:
+  metabase:
