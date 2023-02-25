@@ -17,7 +17,7 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/shurcooL/githubv4 v0.0.0-20200802174311-f27d2ca7f6d5
 	github.com/shurcooL/graphql v0.0.0-20181231061246-d48a9a75455f // indirect
-	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de // indirect
-	golang.org/x/net v0.0.0-20200707034311-ab3426394381
-	golang.org/x/tools v0.0.0-20200804011535-6c149bb5ef0d
+	golang.org/x/crypto v0.1.0 // indirect
+	golang.org/x/net v0.1.0
+	golang.org/x/tools v0.1.12
 )
